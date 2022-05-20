@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
 
+
+admin.site.site_header = 'Отдел кадров компании «Нефтегазик»'
+admin.site.site_title = 'Отдел кадров'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/', include(('api.v1.urls', 'api_v1'))),
+    path('', admin.site.urls),
 ]

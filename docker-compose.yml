@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.10"
 services:
   db:
     container_name: database
@@ -23,6 +23,6 @@ services:
     depends_on:
       - db
     ports:
-      - 8000:8000
+      - 80:8000
     command: gunicorn --bind 0.0.0.0:8000 --timeout 600 --log-level debug --reload
       --workers 4 core.wsgi:application
